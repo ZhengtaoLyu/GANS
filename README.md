@@ -1,40 +1,35 @@
-#🧠 GAN Variants Collection (DCGAN / LSGAN / WGAN / WGAN-GP)
-###This repository implements four mainstream variants of Generative Adversarial Networks (GANs) using PyTorch, ranging from the basic DCGAN to the more stable WGAN-GP. It aims to explore how changes in loss functions and regularization affect training dynamics, output quality, and model stability.
+# 🧠 GAN Variants Collection (DCGAN / LSGAN / WGAN / WGAN-GP)
 
-##📘 Implemented Models
-###| Model       | Core Idea                             | Stability | Paper Reference         |
-###| ----------- | ------------------------------------- | --------- | ----------------------- |
-###| **DCGAN**   | Convolutional GAN with ReLU/Tanh      | ⭐⭐        | Radford et al. (2015)   |
-###| **LSGAN**   | Least Squares Loss instead of BCE     | ⭐⭐        | Mao et al. (2017)       |
-###| **WGAN**    | Wasserstein Loss + Weight Clipping    | ⭐⭐⭐       | Arjovsky et al. (2017)  |
-###| **WGAN-GP** | WGAN + Gradient Penalty for Lipschitz | ⭐⭐⭐⭐      | Gulrajani et al. (2017) |
+This repository implements and compares four foundational variants of Generative Adversarial Networks (GANs) using PyTorch. It aims to provide a clean, modular, and reproducible platform for studying how different GAN training strategies affect image generation quality and model stability.
 
-##🧠 Technical Highlights
-###Modular implementation of Generator & Discriminator networks
+---
 
-###Consistent experiment management via argparse
+## 🎯 Project Purpose
 
-###TensorBoard-compatible logs and image outputs
+Generative Adversarial Networks are notoriously difficult to train. This project was built to answer one central question:
 
-###Dataset preprocessor included
+> **"How do different GAN formulations affect the convergence and visual output quality?"**
 
-###Ready-to-run shell setup script
+By implementing four models from scratch—DCGAN, LSGAN, WGAN, and WGAN-GP—and running them under consistent experimental settings, this work offers both a technical and educational perspective into adversarial learning.
 
-##🎯 Why This Project Matters
-###| Area                 | Status         | Suggestion                              |
-###| -------------------- | -------------- | --------------------------------------- |
-###| Output Visualization | ❌ Not included | Add sample generated images in README   |
-###| Performance Metrics  | ❌ Not included | Include FID/Inception Score comparisons |
-###| Documentation        | ⚠️ Moderate    | Expand inline comments & docstrings     |
-###| Reusability          | ⚠️ Basic       | Separate model code into modules        |
-###| Demo Notebook        | ❌ Missing      | Add Jupyter Notebook for quick preview  |
+---
 
+## 📘 Implemented Models
 
-##Project Structure
-###├── DCGAN.py               # Deep Convolutional GAN
-###├── LSGAN.py               # Least Squares GAN
-###├── WGAN.py                # Wasserstein GAN with weight clipping
-###├── WGAN-GP.py             # WGAN with Gradient Penalty
-###├── LICENSE.md
-###└── README.md              # This file
+| Model       | Core Idea                                  | Stability | Paper Reference            |
+|-------------|---------------------------------------------|-----------|----------------------------|
+| **DCGAN**   | Convolutional GAN with ReLU/Tanh            | ⭐⭐        | Radford et al. (2015)      |
+| **LSGAN**   | Least Squares Loss replaces BCE             | ⭐⭐        | Mao et al. (2017)          |
+| **WGAN**    | Wasserstein Loss + Weight Clipping          | ⭐⭐⭐       | Arjovsky et al. (2017)     |
+| **WGAN-GP** | Gradient Penalty to enforce Lipschitz constraint | ⭐⭐⭐⭐  | Gulrajani et al. (2017)    |
+
+---
+
+## 🧠 Skills & Tech Stack
+
+- **Deep Learning**: PyTorch, CNNs, GAN architecture design
+- **Mathematics**: Loss engineering, Wasserstein distance, gradient penalty
+- **Engineering**: argparse CLI interface, reproducibility setup, shell scripting
+- **Experiment Tracking**: TensorBoard logging, image checkpoints
+- **Data Processing**: OpenCV, custom dataset parsing
 
